@@ -3,26 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                
-                <h1>My blog</h1>
-                
-                <ul>
-                    @foreach ($posts as $post)
-                        <li>
-                            <a href="/posts/{{ $post->id }}">
-                                {{ $post->title }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-                
-            </div>
-        </div>
-    </div>
+  <button id="btn">Click me</button>
+  <button id="toggleClassButton">Toggle Class</button>
+  <button id="hoverButton">Hover Over Me</button>
+  <form id="myForm">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="submit" value="Submit">
+  </form>
+  
+
+
+<script src="assets/scripts/script.js"></script>
 </html>
