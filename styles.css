@@ -1,13 +1,17 @@
-#btn {
+#btn2 {
     background-color: blue;
     color: white;
   }
-  .active {
+  #toggleClassButton {
+    background-color: red;
+    color: white;
+  }
+
+  #toggleClassButton.active {
     background-color: green;
     color: white;
   }
-  #hoverButton {
+  #hoverButton:hover {
     background-color: yellow;
-    color: black;
   }
   
