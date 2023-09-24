@@ -1,26 +1,33 @@
-async function fetchData () {
-  try {
-    let response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
-    if (!response.ok) {
-      throw new Error('Network response was not ok ' + response.statusText)
+let divElement = document.getElementById("myDiv");
+
+// Event listener to show an alert when the div is clicked
+divElement.addEventListener("click", function() {
+    alert("Div was clicked!");
+});
+
+// Change the text of the div
+function changeText() {
+    divElement.innerText = "New text for the div.";
+}
+
+// Change the style of the div
+function changeStyle() {
+    divElement.style.backgroundColor = "blue";
+    divElement.style.color = "white";
+}
+
+// Create and add a new element to the div
+function addElement() {
+    let newParagraph = document.createElement("p");
+    newParagraph.innerText = "This is a new paragraph.";
+    newParagraph.setAttribute("id", "newPara"); // Setting an ID for easy removal later
+    divElement.appendChild(newParagraph);
+}
+
+// Remove the new paragraph from the div
+function removeElement() {
+    let newParagraph = document.getElementById("newPara");
+    if(newParagraph) {
+        newParagraph.remove();
     }
-    let data = await response.json()
-    let resultDiv = document.getElementById('result')
-    resultDiv.innerHTML = `
-      <strong>Title:</strong> ${data.title}<br>
-      <strong>Body:</strong> ${data.body}
-    `
-    resultDiv.style.backgroundColor = '#e0ffe0'
-    resultDiv.style.border = '2px solid #00cc00'
-    resultDiv.style.borderRadius = '15px'
-  } catch (error) {
-    console.error('Fetch error:', error)
-    let resultDiv = document.getElementById('result')
-    resultDiv.innerHTML = 'Error fetching data'
-    resultDiv.style.backgroundColor = '#ffe0e0'
-    resultDiv.style.border = '2px solid #cc0000'
-    resultDiv.style.borderRadius = '15px'
-  }
-
-
 }
