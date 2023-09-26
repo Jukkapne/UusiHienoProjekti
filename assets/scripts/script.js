@@ -20,6 +20,7 @@ function changeStyle() {
 function addElement() {
     let newParagraph = document.createElement("p");
     newParagraph.innerText = "This is a new paragraph.";
+    newParagraph.style.color = "red";
     newParagraph.setAttribute("id", "newPara"); // Setting an ID for easy removal later
     divElement.appendChild(newParagraph);
 }

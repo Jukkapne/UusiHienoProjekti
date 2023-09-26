@@ -1,5 +1,6 @@
     // Check the current date and apply themes accordingly
     const currentDate = new Date();
+    console.log("Tänään on: "+currentDate);
 
     if (currentDate.getMonth() === 9 && currentDate.getDate() === 31) {
         // Halloween - October 31
